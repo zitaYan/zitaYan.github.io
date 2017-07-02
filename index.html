@@ -185,7 +185,7 @@
                 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -207,16 +207,74 @@
 
             </div>
             
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-content" itemprop="articleBody">
                     <ol>
-<li><p>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</p>
-</li>
+<li>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</li>
 <li><p>当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录</p>
+</li>
+<li><p>不能直接给a链接添加点击事件,如果要添加的话,最后需要return false</p>
+</li>
+<li><p>共用侧边栏的一些事件  require([“static/js/common”])</p>
+</li>
+<li><p>侧边栏注意事项</p>
+<ul>
+<li>给侧边栏中的li注册点击事件的时候(当前点击的背景色改变),发现页面有跳转,新增加的背景色会恢复</li>
+<li>改的是当前页面的内容,也要改变其他页面有侧边栏的内容</li>
+<li>在哪个页面的时候,让这个页面对应的导航栏的背景色改变</li>
+<li>获取location.href的值,遍历所有的a进行比较,如果a的href的值和地址值相等,就让当前的a的父元素li的背景色改变</li>
+</ul>
+</li>
+<li><p>bootstrap不支持AMD,所以需要在配置文件中添加shim,并且配置bootstrap的依赖项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"bootstrap"</span>:<span class="string">"assets/bootstrap/js/bootstrap"</span></div><div class="line">    shim:&#123;</div><div class="line">        <span class="string">"bootstrap"</span>:&#123;</div><div class="line">            <span class="attr">deps</span>:[<span class="string">"jquery"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的判断语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"avatar"</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">if</span> tc_avatar=<span class="string">""</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"/views/static/images/default.png"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">else</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"&#123;&#123;v.tc_avatar&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;/<span class="keyword">if</span>&#125;&#125;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的内容要写在大括号里面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;tc_hometown.split(<span class="string">"|"</span>).join(<span class="string">" "</span>)&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在注销启用时间的时候,思维限定,只想去重新渲染数据,其实还有更简单的方法,直接添加删除相关,更改相应的文字</p>
+</li>
+<li><p>把获取url中后面拼接的数据的这一部分js放在公共的js的文件中,为了使后面的模块中,可以使用它,使js中返回整个函数,在接收的时候,接收的是一个函数geturl:function ()<br>若要调用函数中的返回值,在模板中定义变量util接收整个函数,然后通过util.geturl()来调用这个函数</p>
+</li>
+<li><p>表单提交事件注意事项</p>
+<ul>
+<li>使用jquery.form插件进行提交,通过form标签上的id发送ajaxSubmit请求数据   $(#id).ajaxSubmit(function())</li>
+<li>函数里面写和ajax请求一样的内容 url type success:function  注意发送的数据data</li>
+<li>给form中的表单标签添加name属性,不然ajaxform提交不上去,会自动提交数据 name=””中的值要符合data中需要传参的名称</li>
+<li>注意select 中添加name属性, option中一定要有value值,因为最终提交拿到的数据是选中的那一项的option中的value</li>
+<li>input中单选的value值也一定要有</li>
+</ul>
+</li>
+<li><p>知识点 NProgress插件的使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NProgress.start()</div><div class="line">NProgress.done()</div></pre></td></tr></table></figure>
+</li>
+<li><p>jquery ajax全局事件<br>当页面中任何一个请求被发送,ajax全局事件就会被触发  ajax所有的全局事件都有绑定到document上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$( <span class="built_in">document</span> ).ajaxStart（）</div><div class="line">$( <span class="built_in">document</span> ).ajaxSend（）</div><div class="line">$( <span class="built_in">document</span> ).ajaxSuccess（）</div><div class="line">$( <span class="built_in">document</span> ).ajaxError（）</div><div class="line">$( <span class="built_in">document</span> ).ajaxComplete（）</div><div class="line">$( <span class="built_in">document</span> ).ajaxStop（）</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ajaxStart(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    NProgress.start();</div><div class="line">&#125;);</div><div class="line">$(<span class="built_in">document</span>).ajaxStop(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    NProgress.done();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>表单验证插件jquery-validate</p>
+<ul>
+<li>data-required  必填项</li>
+<li>data-trim 去掉空格</li>
+<li>data-pattern 设置正则表达式验证</li>
+<li>data-description=”name”,name为description对象中的key值</li>
+<li>data-describedby=”需要关联内容显示的id值”</li>
+<li>data-conditional=”isBeauty” 和conditional对象配合使用,isBeauty是一个函数<br>  在验证的时候调用这个函数,当函数的返回值为true,则验证通过</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"form"</span>).validate(&#123;</div><div class="line">    <span class="attr">eachValidField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">eachInvalideField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素不通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">valid</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//表单内的所有内容全部通过验证就会调用该方法</span></div><div class="line">        <span class="comment">//注意,触发的时候是点击按钮(button),并且内容全部通过才会触发</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">invalid</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素不通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">eachField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当表单内任意一个元素进行验证的时候都会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">onKeyUp</span>:<span class="literal">false</span>,<span class="comment">//按键弹起的时候进行验证,默认值false</span></div><div class="line">    onBlur:<span class="literal">false</span>,<span class="comment">//失去焦点的时候进行验证,默认值false</span></div><div class="line">    onChange:<span class="literal">false</span>,<span class="comment">//内容改变的时候进行验证,默认值false</span></div><div class="line">    onSubmit:<span class="literal">false</span>,<span class="comment">//表单提交的时候进行验证,默认值false</span></div><div class="line">    sendForm:<span class="literal">true</span>, <span class="comment">//表单验证通过,是否提交表单,默认值为false</span></div><div class="line">    description:&#123;</div><div class="line">        <span class="attr">name</span>:&#123;</div><div class="line">                <span class="attr">required</span>: <span class="string">"用户名不能为空"</span>,</div><div class="line">                <span class="attr">conditional</span>: <span class="string">"你输入的不是美女"</span>,</div><div class="line">                <span class="attr">valid</span>: <span class="string">"输入正确！"</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">conditional</span>:&#123;</div><div class="line">        <span class="attr">isBeauty</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.val()=<span class="string">"潘明"</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
                     
-                        <a href="/2017/07/02/博学谷/" class="postShorten-excerpt_link link">
-                            Weiterlesen
-                        </a>
                         
+                    
+                    
+                        <p>
+                            <a href="/2017/07/02/博学谷/#post-footer" class="postShorten-excerpt_link link">
+                                Kommentieren und teilen
+                            </a>
+                        </p>
                     
                 </div>
             
@@ -497,10 +555,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><ol>
-<li><p>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</p>
-</li>
-<li><p>当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录</p></div>
+                        <div class="media-content hide-xs font-merryweather"></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>

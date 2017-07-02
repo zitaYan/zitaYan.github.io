@@ -11,16 +11,16 @@
     
     
     
-    <meta name="description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)  当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
+    <meta name="description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录  不能直接给a链接添加点击事件,如果要添加的话,最后需要return false  共用侧边栏的一">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="博学谷">
 <meta property="og:url" content="http://yoursite.com/2017/07/02/博学谷/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)  当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
-<meta property="og:updated_time" content="2017-07-02T16:08:59.094Z">
+<meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录  不能直接给a链接添加点击事件,如果要添加的话,最后需要return false  共用侧边栏的一">
+<meta property="og:updated_time" content="2017-07-02T16:19:56.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博学谷">
-<meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)  当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
+<meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录  不能直接给a链接添加点击事件,如果要添加的话,最后需要return false  共用侧边栏的一">
     
     
         
@@ -212,15 +212,21 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <ol>
-<li><p>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</p>
-</li>
+<li>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</li>
 <li><p>当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录</p>
-<a id="more"></a></li>
-<li>不能直接给a链接添加点击事件,如果要添加的话,最后需要return false    </li>
-<li>共用侧边栏的一些事件  require([“static/js/common”])</li>
-<li>给侧边栏中的li注册点击事件的时候(当前点击的背景色改变),发现页面有跳转,新增加的背景色会恢复<br>改的是当前页面的内容,也要改变其他页面有侧边栏的内容<br>在哪个页面的时候,让这个页面对应的导航栏的背景色改变<br>获取location.href的值,遍历所有的a进行比较,如果a的href的值和地址值相等,就让当前的a的父元素li的背景色改变</li>
-</ol>
-<ol>
+</li>
+<li><p>不能直接给a链接添加点击事件,如果要添加的话,最后需要return false</p>
+</li>
+<li><p>共用侧边栏的一些事件  require([“static/js/common”])</p>
+</li>
+<li><p>侧边栏注意事项</p>
+<ul>
+<li>给侧边栏中的li注册点击事件的时候(当前点击的背景色改变),发现页面有跳转,新增加的背景色会恢复</li>
+<li>改的是当前页面的内容,也要改变其他页面有侧边栏的内容</li>
+<li>在哪个页面的时候,让这个页面对应的导航栏的背景色改变</li>
+<li>获取location.href的值,遍历所有的a进行比较,如果a的href的值和地址值相等,就让当前的a的父元素li的背景色改变</li>
+</ul>
+</li>
 <li><p>bootstrap不支持AMD,所以需要在配置文件中添加shim,并且配置bootstrap的依赖项</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"bootstrap"</span>:<span class="string">"assets/bootstrap/js/bootstrap"</span></div><div class="line">    shim:&#123;</div><div class="line">        <span class="string">"bootstrap"</span>:&#123;</div><div class="line">            <span class="attr">deps</span>:[<span class="string">"jquery"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 </li>
@@ -234,8 +240,6 @@
 </li>
 <li><p>把获取url中后面拼接的数据的这一部分js放在公共的js的文件中,为了使后面的模块中,可以使用它,使js中返回整个函数,在接收的时候,接收的是一个函数geturl:function ()<br>若要调用函数中的返回值,在模板中定义变量util接收整个函数,然后通过util.geturl()来调用这个函数</p>
 </li>
-</ol>
-<ol>
 <li><p>表单提交事件注意事项</p>
 <ul>
 <li>使用jquery.form插件进行提交,通过form标签上的id发送ajaxSubmit请求数据   $(#id).ajaxSubmit(function())</li>
@@ -574,10 +578,7 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><ol>
-<li><p>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</p>
-</li>
-<li><p>当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录</p></div>
+                        <div class="media-content hide-xs font-merryweather"></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
