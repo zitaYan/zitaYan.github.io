@@ -221,6 +221,35 @@
 </ol>
 <p>在哪个页面的时候,让这个页面对应的导航栏的背景色改变</p>
 <p>获取location.href的值,遍历所有的a进行比较,如果a的href的值和地址值相等,就让当前的a的父元素li的背景色改变</p>
+<ol>
+<li><p>bootstrap不支持AMD,所以需要在配置文件中添加shim,并且配置bootstrap的依赖项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"bootstrap"</span>:<span class="string">"assets/bootstrap/js/bootstrap"</span></div><div class="line">    shim:&#123;</div><div class="line">        <span class="string">"bootstrap"</span>:&#123;</div><div class="line">            <span class="attr">deps</span>:[<span class="string">"jquery"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的判断语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"avatar"</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">if</span> tc_avatar=<span class="string">""</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"/views/static/images/default.png"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">else</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"&#123;&#123;v.tc_avatar&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;/<span class="keyword">if</span>&#125;&#125;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的内容要写在大括号里面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;tc_hometown.split(<span class="string">"|"</span>).join(<span class="string">" "</span>)&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在注销启用时间的时候,思维限定,只想去重新渲染数据,其实还有更简单的方法,直接添加删除相关,更改相应的文字</p>
+</li>
+<li><p>把获取url中后面拼接的数据的这一部分js放在公共的js的文件中,为了使后面的模块中,可以使用它,使js中返回整个函数,在接收的时候,接收的是一个函数geturl:function ()<br>若要调用函数中的返回值,在模板中定义变量util接收整个函数,然后通过util.geturl()来调用这个函数</p>
+</li>
+</ol>
+<ol>
+<li><p>表单提交事件注意事项</p>
+<ul>
+<li>使用jquery.form插件进行提交,通过form标签上的id发送ajaxSubmit请求数据   $(#id).ajaxSubmit(function())</li>
+<li>函数里面写和ajax请求一样的内容 url type success:function  注意发送的数据data</li>
+<li>给form中的表单标签添加name属性,不然ajaxform提交不上去,会自动提交数据 name=””中的值要符合data中需要传参的名称</li>
+<li>注意select 中添加name属性, option中一定要有value值,因为最终提交拿到的数据是选中的那一项的option中的value</li>
+<li>input中单选的value值也一定要有</li>
+</ul>
+</li>
+<li><p>知识点 NProgress插件的使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NProgress.start()</div><div class="line">NProgress.done()</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
                     
                         
