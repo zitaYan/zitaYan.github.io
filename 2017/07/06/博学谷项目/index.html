@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/06/博学谷项目/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
-<meta property="og:updated_time" content="2017-07-06T12:20:53.845Z">
+<meta property="og:updated_time" content="2017-07-06T12:22:32.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博学谷项目">
 <meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
@@ -279,12 +279,16 @@
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".settings"</span>).on(<span class="string">'submit'</span>,<span class="string">'form'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">        $(<span class="string">"this"</span>).ajaxSubmit(&#123;</div><div class="line">            <span class="attr">url</span>:<span class="string">"/api/teacher/modify"</span>,</div><div class="line">            <span class="attr">type</span>:<span class="string">'post'</span>,</div><div class="line">            <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">daa</span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(data);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
 <ol>
-<li>form表单提交事件注意事项(jquery.form插件)<ul>
+<li><p>form表单提交事件注意事项(jquery.form插件)</p>
+<ul>
 <li>发送ajaxSubmit提交数据时,不需要再手动填写要发送的数据</li>
 <li>需要在表单标签里面填写name属性,name属性的值和接口文档中需要发送的数据名称是一样的,值为value当中的值(表单会自动获取,无需我们填写)</li>
 <li>对于select中的注意事项<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"cs_tc_id"</span> &gt;</div><div class="line">    &lt;option value="&#123;&#123;item.tc_id&#125;&#125;" &#123;&#123;if cs_tc_id==item.tc_id&#125;&#125;selected&#123;&#123;/if&#125;&#125;&gt;&#123;&#123;item.tc_name&#125;&#125;&lt;/option&gt;</div><div class="line"></div><div class="line">&lt;<span class="regexp">/select&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+<li><p>局部渲染数据的方法<br>重新发送ajax请求渲染数据,针对本项目中的模板中的部分进行局部渲染</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* 把需要局部渲染的数据从当前模板中提取到出来,到子模板中,在当前模板写&#123;&#123;include <span class="string">"子模板的id值"</span>&#125;&#125;</div><div class="line">* 在script标签,和写其他模板一样写模板</div><div class="line">* 在js代码中,把请求来得数据,对子模板进行渲染,并把渲染后的内容添加到当前模板中预留的子模板的位置</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
