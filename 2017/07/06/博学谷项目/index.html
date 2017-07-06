@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/06/博学谷项目/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
-<meta property="og:updated_time" content="2017-07-06T12:22:32.085Z">
+<meta property="og:updated_time" content="2017-07-06T12:23:02.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博学谷项目">
 <meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
@@ -289,6 +289,14 @@
 </li>
 <li><p>局部渲染数据的方法<br>重新发送ajax请求渲染数据,针对本项目中的模板中的部分进行局部渲染</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* 把需要局部渲染的数据从当前模板中提取到出来,到子模板中,在当前模板写&#123;&#123;include <span class="string">"子模板的id值"</span>&#125;&#125;</div><div class="line">* 在script标签,和写其他模板一样写模板</div><div class="line">* 在js代码中,把请求来得数据,对子模板进行渲染,并把渲染后的内容添加到当前模板中预留的子模板的位置</div></pre></td></tr></table></figure>
+</li>
+<li><p>判断当前点击的按钮是保存按钮还是编辑按钮<br>思路如下:</p>
+<ul>
+<li>在模板中给button一个自定义的type属性</li>
+<li>在请求返回的数据data中,添加data.type,通过添加按钮进来的值为add,通过编辑按钮进来的type的值为edit</li>
+<li>给模板中的data.type赋值,值为返回的data.type值  </li>
+<li>在点击当前按钮的时候,判断type的值,如果是add就是保存按钮,反之就是编辑按钮</li>
+</ul>
 </li>
 </ol>
 
