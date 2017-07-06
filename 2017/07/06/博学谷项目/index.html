@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/06/博学谷项目/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
-<meta property="og:updated_time" content="2017-07-06T12:18:47.477Z">
+<meta property="og:updated_time" content="2017-07-06T12:20:53.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博学谷项目">
 <meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
@@ -72,7 +72,7 @@
         
             <div class="sidebar-profile">
                 <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/2.JPG" alt="Foto de autor"/>
+                    <img class="sidebar-profile-picture" src="/assets/images/2.JPG" alt="Bild des Autors"/>
                 </a>
                 <h4 class="sidebar-profile-name">zitaYan</h4>
                 
@@ -92,7 +92,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                        <span class="sidebar-button-desc">Inicio</span>
+                        <span class="sidebar-button-desc">Home</span>
                     </a>
             </li>
             
@@ -104,7 +104,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">Categorías</span>
+                        <span class="sidebar-button-desc">Kategorien</span>
                     </a>
             </li>
             
@@ -116,7 +116,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                        <span class="sidebar-button-desc">Etiquetas</span>
+                        <span class="sidebar-button-desc">Tags</span>
                     </a>
             </li>
             
@@ -128,7 +128,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                        <span class="sidebar-button-desc">Archivos</span>
+                        <span class="sidebar-button-desc">Archiv</span>
                     </a>
             </li>
             
@@ -140,7 +140,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">Buscar</span>
+                        <span class="sidebar-button-desc">Suche</span>
                     </a>
             </li>
             
@@ -267,6 +267,25 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"form"</span>).validate(&#123;</div><div class="line">    <span class="attr">eachValidField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">eachInvalideField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素不通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">valid</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//表单内的所有内容全部通过验证就会调用该方法</span></div><div class="line">        <span class="comment">//注意,触发的时候是点击按钮(button),并且内容全部通过才会触发</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">invalid</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当任意表单元素不通过校验的时候，就会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">eachField</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//当表单内任意一个元素进行验证的时候都会调用该方法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">onKeyUp</span>:<span class="literal">false</span>,<span class="comment">//按键弹起的时候进行验证,默认值false</span></div><div class="line">    onBlur:<span class="literal">false</span>,<span class="comment">//失去焦点的时候进行验证,默认值false</span></div><div class="line">    onChange:<span class="literal">false</span>,<span class="comment">//内容改变的时候进行验证,默认值false</span></div><div class="line">    onSubmit:<span class="literal">false</span>,<span class="comment">//表单提交的时候进行验证,默认值false</span></div><div class="line">    sendForm:<span class="literal">true</span>, <span class="comment">//表单验证通过,是否提交表单,默认值为false</span></div><div class="line">    description:&#123;</div><div class="line">        <span class="attr">name</span>:&#123;<span class="comment">//下面的值为data-describedby关联的id的的标签中满足条件需要显示的内容</span></div><div class="line">                required: <span class="string">"用户名不能为空"</span>,</div><div class="line">                <span class="attr">conditional</span>: <span class="string">"你输入的不是美女"</span>,</div><div class="line">                <span class="attr">valid</span>: <span class="string">"输入正确！"</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">conditional</span>:&#123;</div><div class="line">        <span class="attr">isBeauty</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.val()=<span class="string">"潘明"</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
+<li><p>通过jquery-form插件来实现表单提交事件</p>
+<ul>
+<li>通过$(“.settings”)来找form是为了事件委托</li>
+<li>‘submit’ 只要表单内有button按钮,通过点击,就可以实现提交</li>
+<li>$(“this”)指要提交的表单</li>
+<li>ajaxSubmit()指jquery-form插件中的方法,用来提交表单</li>
+<li>提交表单的data数据为,表单中带有name属性的内容</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".settings"</span>).on(<span class="string">'submit'</span>,<span class="string">'form'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">        $(<span class="string">"this"</span>).ajaxSubmit(&#123;</div><div class="line">            <span class="attr">url</span>:<span class="string">"/api/teacher/modify"</span>,</div><div class="line">            <span class="attr">type</span>:<span class="string">'post'</span>,</div><div class="line">            <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">daa</span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(data);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<ol>
+<li>form表单提交事件注意事项(jquery.form插件)<ul>
+<li>发送ajaxSubmit提交数据时,不需要再手动填写要发送的数据</li>
+<li>需要在表单标签里面填写name属性,name属性的值和接口文档中需要发送的数据名称是一样的,值为value当中的值(表单会自动获取,无需我们填写)</li>
+<li>对于select中的注意事项<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"cs_tc_id"</span> &gt;</div><div class="line">    &lt;option value="&#123;&#123;item.tc_id&#125;&#125;" &#123;&#123;if cs_tc_id==item.tc_id&#125;&#125;selected&#123;&#123;/if&#125;&#125;&gt;&#123;&#123;item.tc_name&#125;&#125;&lt;/option&gt;</div><div class="line"></div><div class="line">&lt;<span class="regexp">/select&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
 </ol>
 
             
@@ -283,14 +302,14 @@
                     <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">FRÜHER</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/myblog绑定域名注意事项/" data-tooltip="myblog绑定域名注意事项">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">SIGUIENTE</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NÄCHSTER</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -365,14 +384,14 @@
                     <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">ANTERIOR</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">FRÜHER</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/myblog绑定域名注意事项/" data-tooltip="myblog绑定域名注意事项">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">SIGUIENTE</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NÄCHSTER</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -430,7 +449,7 @@
             
             <li class="share-option">
                 <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/06/博学谷项目/">
-                    <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
+                    <i class="fa fa-facebook-official"></i><span>Teilen auf Facebook</span>
                 </a>
             </li>
         
@@ -438,7 +457,7 @@
             
             <li class="share-option">
                 <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/06/博学谷项目/">
-                    <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
+                    <i class="fa fa-twitter"></i><span>Teilen auf Twitter</span>
                 </a>
             </li>
         
@@ -446,7 +465,7 @@
             
             <li class="share-option">
                 <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/06/博学谷项目/">
-                    <i class="fa fa-google-plus"></i><span>Compartir en Google+</span>
+                    <i class="fa fa-google-plus"></i><span>Teilen auf Google Plus</span>
                 </a>
             </li>
         
@@ -468,7 +487,7 @@
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/2.JPG" alt="Foto de autor"/>
+            <img id="about-card-picture" src="/assets/images/2.JPG" alt="Bild des Autors"/>
         
             <h4 id="about-card-name">zitaYan</h4>
         
@@ -503,7 +522,7 @@
             </form>
         </div>
         <div class="modal-body">
-            <div class="no-result text-color-light text-center">no se encontraron artículos</div>
+            <div class="no-result text-color-light text-center">keinen Beitrag gefunden</div>
             <div class="results">
                 
                 <div class="media">
@@ -591,10 +610,10 @@
         </div>
         <div class="modal-footer">
             <p class="results-count text-medium"
-                data-message-zero="no se encontraron artículos"
-                data-message-one="1 artículo encontrado"
-                data-message-other="{n} artículos encontrados">
-                4 artículos encontrados
+                data-message-zero="keinen Beitrag gefunden"
+                data-message-one="1 Beitrag gefunden"
+                data-message-other="{n} Einträge gefunden">
+                4 Einträge gefunden
             </p>
         </div>
     </div>
