@@ -6,21 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hexo">
-    <title>Hello World - Hexo</title>
+    <title>博学谷项目 - Hexo</title>
     <meta name="author" content="zitaYan">
     
     
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/07/02/hello-world/index.html">
+<meta property="og:title" content="博学谷项目">
+<meta property="og:url" content="http://yoursite.com/2017/07/06/博学谷项目/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-07-02T05:21:11.989Z">
+<meta property="og:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
+<meta property="og:updated_time" content="2017-07-06T12:17:47.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="博学谷项目">
+<meta name="twitter:description" content="退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href) 当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录">
     
     
         
@@ -193,14 +193,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Hello World
+            博学谷项目
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-07-02T13:21:11+08:00">
+    <time itemprop="datePublished" datetime="2017-07-06T20:16:48+08:00">
 	
-		    02 Jul 2017
+		    06 Jul 2017
     	
     </time>
     
@@ -211,15 +211,36 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <ol>
+<li>退出功能,要向后台发送退出请求,后台会自动清空$.cookie(“PHPSESSID”),然后再请求成功的时候,跳转页面到登录页面(location.href)</li>
+<li>当不是在登录页的时候,判断用户是否登录($.cookie(“PHPSESSID”)),没有登录的话,页面跳转到登录页面,强制用户进行登录</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li>不能直接给a链接添加点击事件,如果要添加的话,最后需要return false</li>
+<li>共用侧边栏的一些事件  require([“static/js/common”])</li>
+<li><p>侧边栏注意事项</p>
+<ul>
+<li>给侧边栏中的li注册点击事件的时候(当前点击的背景色改变),发现页面有跳转,新增加的背景色会恢复</li>
+<li>改的是当前页面的内容,也要改变其他页面有侧边栏的内容</li>
+<li>在哪个页面的时候,让这个页面对应的导航栏的背景色改变</li>
+<li>获取location.href的值,遍历所有的a进行比较,如果a的href的值和地址值相等,就让当前的a的父元素li的背景色改变</li>
+</ul>
+</li>
+<li><p>bootstrap不支持AMD,所以需要在配置文件中添加shim,并且配置bootstrap的依赖项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"bootstrap"</span>:<span class="string">"assets/bootstrap/js/bootstrap"</span></div><div class="line">    shim:&#123;</div><div class="line">        <span class="string">"bootstrap"</span>:&#123;</div><div class="line">            <span class="attr">deps</span>:[<span class="string">"jquery"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的判断语句</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"avatar"</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">if</span> tc_avatar=<span class="string">""</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"/views/static/images/default.png"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;<span class="keyword">else</span>&#125;&#125;</div><div class="line">     &lt;img src=<span class="string">"&#123;&#123;v.tc_avatar&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &#123;&#123;/<span class="keyword">if</span>&#125;&#125;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>模板引擎中的内容要写在大括号里面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;tc_hometown.split(<span class="string">"|"</span>).join(<span class="string">" "</span>)&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在注销启用时间的时候,思维限定,只想去重新渲染数据,其实还有更简单的方法,直接添加删除相关,更改相应的文字</p>
+</li>
+<li><p>把获取url中后面拼接的数据的这一部分js放在公共的js的文件中,为了使后面的模块中,可以使用它,使js中返回整个函数,在接收的时候,接收的是一个函数geturl:function ()<br>若要调用函数中的返回值,在模板中定义变量util接收整个函数,然后通过util.geturl()来调用这个函数</p>
+</li>
+</ol>
 
             
         </div>
@@ -232,7 +253,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/我的博客/"  data-tooltip="我的博客">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">FRÜHER</span>
@@ -240,7 +261,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/myblog绑定域名注意事项/" data-tooltip="myblog绑定域名注意事项">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NÄCHSTER</span>
                     <i class="fa fa-angle-right"></i>
@@ -258,7 +279,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -266,7 +287,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -274,7 +295,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -314,7 +335,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/我的博客/"  data-tooltip="我的博客">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">FRÜHER</span>
@@ -322,7 +343,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/02/myblog绑定域名注意事项/" data-tooltip="myblog绑定域名注意事项">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NÄCHSTER</span>
                     <i class="fa fa-angle-right"></i>
@@ -340,7 +361,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -348,7 +369,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -356,7 +377,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -381,7 +402,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-facebook-official"></i><span>Teilen auf Facebook</span>
                 </a>
             </li>
@@ -389,7 +410,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-twitter"></i><span>Teilen auf Twitter</span>
                 </a>
             </li>
@@ -397,7 +418,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/02/hello-world/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/06/博学谷项目/">
                     <i class="fa fa-google-plus"></i><span>Teilen auf Google Plus</span>
                 </a>
             </li>
