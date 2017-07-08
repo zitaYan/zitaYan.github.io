@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hexo">
-    <title>Archiv: 2017/7 - Hexo</title>
+    <title>Archives: 2017/7 - Hexo</title>
     <meta name="author" content="zitaYan">
     
     
@@ -68,7 +68,7 @@
         
             <div class="sidebar-profile">
                 <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/2.JPG" alt="Bild des Autors"/>
+                    <img class="sidebar-profile-picture" src="/assets/images/2.JPG" alt="Author&#39;s picture"/>
                 </a>
                 <h4 class="sidebar-profile-name">zitaYan</h4>
                 
@@ -100,7 +100,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">Kategorien</span>
+                        <span class="sidebar-button-desc">Categories</span>
                     </a>
             </li>
             
@@ -124,7 +124,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                        <span class="sidebar-button-desc">Archiv</span>
+                        <span class="sidebar-button-desc">Archives</span>
                     </a>
             </li>
             
@@ -136,7 +136,7 @@
                         >
                     
                         <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">Suche</span>
+                        <span class="sidebar-button-desc">Search</span>
                     </a>
             </li>
             
@@ -193,14 +193,14 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/2017/07/07/node-NPM的介绍/">
-                            node NPM的介绍
+                            node NPM Gulp的简单介绍
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-07T11:16:36+08:00">
 	
-		    07 Jul 2017
+		    Jul 07, 2017
     	
     </time>
     
@@ -209,9 +209,40 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="检查是否按照node"><a href="#检查是否按照node" class="headerlink" title="检查是否按照node"></a>检查是否按照node</h2><p>在cmd下输入node -v     会出现node的版本</p>
-<p>js能在浏览器中运行,是因为浏览器中有js运行的环境(例如:google chrome v8引擎)</p>
-<p>This is <a href="http://www.cnblogs.com/gdutbean/archive/2012/02/21/2362003.html" target="_blank" rel="external">an example</a> inline link.</p>
+                    <h2 id="检查是否按照node"><a href="#检查是否按照node" class="headerlink" title="检查是否按照node"></a>检查是否按照node</h2><p>在cmd下输入node -v     会出现node的版本<br>       输入npm -v      会出现npm的版本</p>
+<p>js能在浏览器中运行,是因为浏览器中有js运行的环境(例如:google chrome v8引擎)<br><a href="http://www.cnblogs.com/gdutbean/archive/2012/02/21/2362003.html" target="_blank" rel="external">链接查看几种js引擎的介绍</a> </p>
+<p>Node是一个服务器端的js运行环境,还是当做web服务器来使用<br>直接在cmd下敲node,然后回车,可以和浏览器的控制台很像,可以在里面执行js代码</p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>Node Package Manager node的包管理工具,分为:</p>
+<pre><code>1. 资源包 jquery ..        --save (-S)
+2. 工具包 iting5_top..     -g 全局安装-global 全局安装,可以在整个电脑上使用
+</code></pre><p>–savedev (-D)  开发过程中需要这个包,项目上线后,在生产环境不需要这个包<br>npm init 初始化,会生成package.json文件<br>npm init -y 无需填写信息</p>
+<p>npm install jquery –save  </p>
+<p>执行完后会自动在package.json 里面生成一个依赖性,内容为已经下载的文件和版本(清单文件,当前项目需要用到的包)<br>会生成一个node_modules文件夹,里面放下载的文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dependencies"</span>:&#123;</div><div class="line">    <span class="string">"jquery"</span>:<span class="string">"^3.2.1"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另外,一般给别人传送文件的时候,不把node_modules发给别人,别人收到文件后,直接在当前文件夹下输入npm install  会自动把package.json里面的依赖性下载下来,并且放在node_modules文件夹内</p>
+<p>npm下载文件可以指定版本号<br>查看版本号 npm info bootstrap<br>指定版本号下载 npm install bootstrap@3.3.0</p>
+<p>在cmd中内容太多,无法显示完全的问题:控制台的缓存是有限的,它只能保存指定行数的信息<br>方法一:在输入的原命令的基础上加上|more<br>    例如:npm info bootstrap|more<br>方法二:原命令&gt;文本文件名.txt<br>    例如:npm info bootstrap&gt;1.txt </p>
+<p>搜索包<br>npm search 包名</p>
+<p>移除包 npm remove [包名] –save<br>删除包文件,并且修改package.json的内容 </p>
+<p>使用淘宝镜像<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> </p>
+<p>Gulp :前端自动化构建工具<br>例如 :压缩代码,less转为css</p>
+<p>安装Gulp   npm install gulp-cli -g<br>然后执行   npm install gulp -D  (-D 是–savedev的缩写)<br>touch gulpfile.js 在当前目录下创建一个文件</p>
+<p>Gulp应用场景<br>在项目上线之前,对项目进行构建,自动完成一系列重复的操作</p>
+<p>gulp核心方法</p>
+<pre><code>* task() 定义一个任务
+* src()  根据目录找文件 
+* dest() 文件转储的地址
+* watch()
+</code></pre><ol>
+<li>新建一个文件夹,首先进行npm init -y 初始化npm,生成package.json</li>
+<li>然后执行 npm install gulp -D (一个文件夹内需要执行这一个,把gulp中所需要的包下载下来)</li>
+<li>touch gulpfile.js<br>//gulpfile.js (gulp需要做的事情需要定义到这里面)</li>
+<li>另外新建一个js文件,里面写入部分代码(压缩代码的时候,要压缩这个文件 index.js)</li>
+</ol>
+<p>var gulp=require(“gulp”);//nodejs当中模块化的实现,加载gulp模块<br>var uglify=require(“gulp-uglify”);</p>
+<p>gulp.task(“js”,function(){//参数为任务的名称,例如js代码的压缩<br>    gulp.src(“./index.js”)//根据目录找文件<br>    //压缩代码需要插件 gulp-uglify压缩代码的插件 在cmd命令行输入npm install gulp-uglify -D  然后引入gulp-uglify 模块,在上面引入 不知道如何引,查看官网npmjs.com 输入框搜索 gulp-uglify<br>    .pipe(dest(“./dest”))  //gulp的pipe方法(管道),把文件存储到dest文件夹下<br>});</p>
+<ol>
+<li>在当前文件夹的cmd下执行 gulp js 命令</li>
+</ol>
 
                     
                         
@@ -219,7 +250,7 @@
                     
                         <p>
                             <a href="/2017/07/07/node-NPM的介绍/#post-footer" class="postShorten-excerpt_link link">
-                                Kommentieren und teilen
+                                Comment and share
                             </a>
                         </p>
                     
@@ -244,7 +275,7 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-06T21:18:28+08:00">
 	
-		    06 Jul 2017
+		    Jul 06, 2017
     	
     </time>
     
@@ -259,7 +290,7 @@
 </code></pre>
                     
                         <a href="/2017/07/06/发布相关内容/" class="postShorten-excerpt_link link">
-                            Weiterlesen
+                            Continue reading
                         </a>
                         
                     
@@ -284,7 +315,7 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-06T20:16:48+08:00">
 	
-		    06 Jul 2017
+		    Jul 06, 2017
     	
     </time>
     
@@ -299,7 +330,7 @@
 <li><p>不能直接给a链接添加点击事件,如果要添加的话,最后需要return false
                     
                         <a href="/2017/07/06/博学谷项目/" class="postShorten-excerpt_link link">
-                            Weiterlesen
+                            Continue reading
                         </a>
                         
                     
@@ -324,7 +355,7 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" datetime="2017-07-02T15:45:30+08:00">
 	
-		    02 Jul 2017
+		    Jul 02, 2017
     	
     </time>
     
@@ -338,100 +369,9 @@
 <li><img src="/imgs/01yuming.bmp" alt="">
                     
                         <a href="/2017/07/02/myblog绑定域名注意事项/" class="postShorten-excerpt_link link">
-                            Weiterlesen
+                            Continue reading
                         </a>
                         
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/07/02/我的博客/">
-                            我的博客
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-07-02T14:32:35+08:00">
-	
-		    02 Jul 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/07/02/我的博客/#post-footer" class="postShorten-excerpt_link link">
-                                Kommentieren und teilen
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/07/02/hello-world/">
-                            Hello World
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-07-02T13:21:11+08:00">
-	
-		    02 Jul 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/07/02/hello-world/#post-footer" class="postShorten-excerpt_link link">
-                                Kommentieren und teilen
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -443,7 +383,7 @@
     <ul class="pagination">
         
         
-        <li class="pagination-number">Seite 1 von 1</li>
+        <li class="pagination-number">page 1 of 1</li>
     </ul>
 </div>
 
@@ -473,7 +413,7 @@
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/2.JPG" alt="Bild des Autors"/>
+            <img id="about-card-picture" src="/assets/images/2.JPG" alt="Author&#39;s picture"/>
         
             <h4 id="about-card-name">zitaYan</h4>
         
@@ -508,46 +448,8 @@
             </form>
         </div>
         <div class="modal-body">
-            <div class="no-result text-color-light text-center">keinen Beitrag gefunden</div>
+            <div class="no-result text-color-light text-center">no post found</div>
             <div class="results">
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2017/07/02/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    Jul 2, 2017
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2017/07/02/我的博客/">
-                            <h3 class="media-heading">我的博客</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    Jul 2, 2017
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
                 
                 <div class="media">
                     
@@ -618,7 +520,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://yoursite.com/2017/07/07/node-NPM的介绍/">
-                            <h3 class="media-heading">node NPM的介绍</h3>
+                            <h3 class="media-heading">node NPM Gulp的简单介绍</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
@@ -637,10 +539,10 @@
         </div>
         <div class="modal-footer">
             <p class="results-count text-medium"
-                data-message-zero="keinen Beitrag gefunden"
-                data-message-one="1 Beitrag gefunden"
-                data-message-other="{n} Einträge gefunden">
-                6 Einträge gefunden
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                4 posts found
             </p>
         </div>
     </div>
