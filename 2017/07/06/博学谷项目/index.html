@@ -280,7 +280,7 @@
 <ul>
 <li>发送ajaxSubmit提交数据时,不需要再手动填写要发送的数据</li>
 <li>需要在表单标签里面填写name属性,name属性的值和接口文档中需要发送的数据名称是一样的,值为value当中的值(表单会自动获取,无需我们填写)</li>
-<li>对于select中的注意事项<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"cs_tc_id"</span> &gt;</div><div class="line">    &lt;option value="&#123;&#123;item.tc_id&#125;&#125;" &#123;&#123;if cs_tc_id==item.tc_id&#125;&#125;selected&#123;&#123;/if&#125;&#125;&gt;&#123;&#123;item.tc_name&#125;&#125;&lt;/option&gt;</div><div class="line"></div><div class="line">&lt;<span class="regexp">/select&gt;</span></div></pre></td></tr></table></figure>
+<li>对于select中的注意事项<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"cs_tc_id"</span> &gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;item.tc_id&#125;&#125;"</span> &#123;&#123;<span class="attr">if</span> <span class="attr">cs_tc_id</span>==<span class="string">item.tc_id&#125;&#125;selected&#123;&#123;/if&#125;&#125;</span>&gt;</span>&#123;&#123;item.tc_name&#125;&#125;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;<span class="regexp">/select&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -637,6 +637,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://yoursite.com/2017/07/10/todo/">
+                            <h3 class="media-heading">todo</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 10, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -644,7 +663,7 @@
                 data-message-zero="keinen Beitrag gefunden"
                 data-message-one="1 Beitrag gefunden"
                 data-message-other="{n} Einträge gefunden">
-                5 Einträge gefunden
+                6 Einträge gefunden
             </p>
         </div>
     </div>
